@@ -12,24 +12,58 @@
     <ul id="taskList"></ul>
 
     <script>
-        function addTask() {
-            const taskInput = document.getElementById('taskInput');
-            const taskText = taskInput.value.trim();
+        const stack = [];
 
-            if (taskText === '') {
+        function addTask() {
+            const textInp = document.getElementById('taskInput');
+            const task = textInp.value.trim();
+
+            if (task === '') {
                 return;
             }
 
+            stack.push(task);
+            show();
+            textInp.value = '';
+        }
+
+        function show() {
             const taskList = document.getElementById('taskList');
-            const taskItem = document.createElement('li');
-            taskItem.textContent = taskText;
+            taskList.innerHTML = '';
 
-            taskItem.addEventListener('click', function() {
-                taskList.removeChild(taskItem);
-            });
+            for (let i = stack.length - 1; i >= 0; i--) {
+                const task = stack[i];
+                const item = document.createElement('li');
 
-            taskList.appendChild(taskItem);
-            taskInput.value = '';
+                const taskSpan = document.createElement('span');
+                taskSpan.textContent = task;
+                item.appendChild(taskSpan);
+
+                const editBtn = document.createElement('button');
+                editBtn.textContent = 'edit';
+                editBtn.addEventListener('click', function() {
+                    editTask(i);
+                });
+                item.appendChild(editBtn);
+
+                const rmvBtn = document.createElement('button');
+                rmvBtn.textContent = 'Remove';
+                rmvBtn.addEventListener('click', function() {
+                    stack.splice(i, 1);
+                    show(); 
+                });
+                item.appendChild(rmvBtn);
+
+                taskList.appendChild(item);
+            }
+        }
+
+        function editTask(i) {
+            const newtsk = prompt('Edidt task:', stack[i]);
+            if (newtsk !== null && newtsk.trim() !== '') {
+                stack[i] = newtsk.trim();
+                show();
+            }
         }
     </script>
 </body>
