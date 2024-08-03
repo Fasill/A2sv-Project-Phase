@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Job Posting UI
 
-## Getting Started
+This repository contains a React project for displaying job postings with sorting functionality. It uses Next.js, Tailwind CSS, and various components to create a user-friendly interface.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Job Listings**: Display job postings with titles, descriptions, and images.
+- **Sorting**: Sort job postings by title.
+- **Detailed View**: View detailed information about each job posting, including responsibilities, ideal candidate traits, and job specifics.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Fasill/A2sv-Project-Phase.git
+   cd A2sv-Project-Phase/task6
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Open your browser and navigate to `http://localhost:3000`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+- `assets/`: Contains JSON data for job postings and icons.
+- `components/`: Contains reusable React components (`Card`, `CustomButton`).
+- `pages/`: Contains the main pages (`Home`, `Description`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Dependencies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- React
+- Next.js
+- Tailwind CSS
+- React Icons
+
+  [
+  Screencast from 08-02-2024 11:35:00 PM.webm](https://github.com/user-attachments/assets/6002eb7e-d3e6-4d83-9352-659d6c61e512)
+
