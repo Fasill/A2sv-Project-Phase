@@ -13,7 +13,7 @@ This repository contains a React project for displaying job postings with sortin
 1. Clone the repository:
    ```bash
    git clone https://github.com/Fasill/A2sv-Project-Phase.git
-   cd A2sv-Project-Phase/task6
+   cd A2sv-Project-Phase/task7
    ```
 
 2. Install dependencies:
