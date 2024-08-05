@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaRegCheckCircle } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
-import { GoDotFill } from "react-icons/go";
 import icon1 from '../assets/icons/icon1.png';
 import icon2 from '../assets/icons/icon2.png';
 import icon3 from '../assets/icons/icon3.png';
@@ -11,6 +10,7 @@ import icon5 from '../assets/icons/icon5.png';
 
 import { StaticImageData } from 'next/image';
 import CustomButton from '../components/CustomButton';
+import { useGetProductQuery } from '../redux/service/dummyData';
 
 interface JobPosting {
   id: string;
@@ -48,25 +48,16 @@ interface JobPosting {
 }
 
 const Page: React.FC = () => {
-  const [id, setId] = useState<string | null>(null);
   const [filteredData, setFilteredData] = useState<JobPosting | null>(null);
+  const queryId = new URLSearchParams(window.location.search).get('id');
+  const data = useGetProductQuery(queryId)
+  useEffect(()=>{
+    if (data.data){
 
-  useEffect(() => {
-    const queryId = new URLSearchParams(window.location.search).get('id');
-    if (queryId) {
-      const fetchData = async () => {
-        try {
-          const res = await fetch(`https://akil-backend.onrender.com/opportunities/${queryId}`);
-          const data = await res.json();
-          console.log("Response data:", data.data);
-          setFilteredData(data.data);
-        } catch (error) {
-          console.error("Error fetching data:", error);
-        }
-      };
-      fetchData();
+      setFilteredData(data.data.data);
     }
-  }, []);
+
+  },[data])
 
   const icons: StaticImageData[] = [icon1, icon2, icon3, icon4, icon5];
   const titles = ["Posted On", "Deadline", "Location", "Start Date", "End Date"];
