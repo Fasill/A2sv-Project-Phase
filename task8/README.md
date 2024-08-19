@@ -1,4 +1,5 @@
 
+
 # Job Posting UI
 
 This repository contains a React project for displaying job postings with sorting functionality. It uses Next.js, Tailwind CSS, and various components to create a user-friendly interface.
@@ -10,6 +11,7 @@ This repository contains a React project for displaying job postings with sortin
 - **Detailed View**: View detailed information about each job posting, including responsibilities, ideal candidate traits, and job specifics.
 - **Authentication**: Secure access with authentication using NextAuth.
 - **Data Fetching**: Fetch job postings data from an external API using RTK Query.
+- **Bookmark Jobs**: Save job postings by clicking the bookmark icon, and view saved jobs by clicking the "Saved Jobs" button.
 
 ## Installation
 
@@ -43,15 +45,20 @@ The data is fetched from: `https://akil-backend.onrender.com/opportunities`.
 
 Authentication is implemented using NextAuth. It provides secure access to the application and manages user sessions.
 
+## Bookmark Jobs
+
+- **Save Jobs**: Click the bookmark icon on a job posting to save it.
+- **View Saved Jobs**: Click the "Saved Jobs" button to see all your saved job postings.
+
 ## Project Structure
 
 - `assets/`: Contains icons and other static assets.
 - `components/`: Contains reusable React components (`Card`, `CustomButton`).
-
 - `/`: The home page displaying job postings.
 - `login/`: Login page for user authentication.
 - `signup/`: Signup page for new users.
 - `description/`: Page showing detailed information about each job posting.
+- `saved/`: Page showing saved job postings.
 - `services/`: Contains API service functions for fetching data and handling authentication.
 
 ## Dependencies
@@ -63,9 +70,6 @@ Authentication is implemented using NextAuth. It provides secure access to the a
 - RTK Query
 - NextAuth
 
-[Screencast from 08-07-2024 03:47:05 PM.webm](https://github.com/user-attachments/assets/f7971d39-bdff-476d-8410-7a2799a5dc10)
+[Screencast from 08-20-2024 12:46:34 AM.webm](https://github.com/user-attachments/assets/cb62b2fa-af09-40d7-9aaf-0e27ca366c58)
 
-[Screencast from 08-07-2024 03:47:51 PM.webm](https://github.com/user-attachments/assets/16176688-c073-40d7-baf6-8675b099acb4)
-
-[Screencast from 08-07-2024 03:49:50 PM.webm](https://github.com/user-attachments/assets/728e85ff-5871-4a68-840a-1883d33025ab)
-
+[Screencast from 08-20-2024 12:47:19 AM.webm](https://github.com/user-attachments/assets/87e32d10-f892-48da-89e1-e3fb66f1d916)
